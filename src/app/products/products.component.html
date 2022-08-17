@@ -1,0 +1,41 @@
+
+<div class="products">
+    <label>Product Name</label>
+<input type="text" [(ngModel)]="name">
+<label>Product image </label>
+<input type="text" [(ngModel)]="url">
+<label>Product price</label>
+<input type="number" [(ngModel)]="price">
+
+<button (click)="onAdd()">Add product</button>
+
+
+</div>
+
+
+
+<div class="container" *ngIf="products.length; else noProduct">
+
+
+    <div *ngFor="let product of products;let i=index">
+
+
+       <div class="cont">
+        <img [src]="product.url" alt="">
+
+        <h1>{{product.name}}</h1>
+        <p>{{product.price}}</p>
+       </div>
+
+    </div>
+    
+</div>
+
+<ng-template #noProduct>
+    <p>No product</p>
+</ng-template>
+
+
+
+
+
