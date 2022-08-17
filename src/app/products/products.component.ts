@@ -46,6 +46,8 @@ export class ProductsComponent {
   price =0
 day=new Date().getDate()
 
+filter=''
+
 onAdd(){
   this.products.push({
     name:this.name,

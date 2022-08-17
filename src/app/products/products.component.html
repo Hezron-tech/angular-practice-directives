@@ -8,16 +8,17 @@
 <input type="number" [(ngModel)]="price">
 
 <button (click)="onAdd()">Add product</button>
-
-
 </div>
 
+<div class="search">
+    <input  type="text" [(ngModel)]="filter"  placeholder="search product">
+</div>
 
 
 <div class="container" *ngIf="products.length; else noProduct">
 
 
-    <div *ngFor="let product of products;let i=index">
+    <div *ngFor="let product of products |search:filter;let i=index">
 
 
        <div class="cont">
